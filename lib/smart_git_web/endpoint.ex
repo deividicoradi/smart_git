@@ -7,12 +7,8 @@ defmodule SmartGitWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_smart_git_key",
-    signing_salt: "U1qm39Hp"
+    signing_salt: "14CoZtFU"
   ]
-
-  socket "/socket", SmartGitWeb.UserSocket,
-    websocket: true,
-    longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
@@ -24,7 +20,7 @@ defmodule SmartGitWeb.Endpoint do
     at: "/",
     from: :smart_git,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(assets fonts images favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
